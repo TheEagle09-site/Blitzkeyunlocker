@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blitz Free Key</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #080808, #1b1b1b);
+  color: white;
+}
+
+.box {
+  width: 90%;
+  max-width: 400px;
+  padding: 35px 25px;
+  text-align: center;
+  background: #111;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 27px;
+}
+
+.unlock-btn {
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #1877ff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.unlock-btn:active {
+  transform: scale(0.97);
+}
+
+#timer {
+  display: none;
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 380px;
+  background: #181818;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+}
+
+.key {
+  margin: 20px 0;
+  padding: 15px 10px;
+  background: #000;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.copy-btn {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-radius: 9px;
+  background: #20c56b;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn {
+  margin-top: 12px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #444;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>⚡ Blitz Free Key</h1>
+
+  <button class="unlock-btn" onclick="startUnlock()">
+    BLITZ FREE KEY UNLOCK
+  </button>
+
+  <div id="timer">
+    Please wait... <span id="seconds">5</span>s
+  </div>
+</div>
+
+<div class="modal" id="keyModal">
+  <div class="modal-box">
+    <h2>🔓 Key Unlocked</h2>
+
+    <div class="key" id="keyText">
+      BLZ-14UAZM-B40J7M
+    </div>
+
+    <button class="copy-btn" onclick="copyKey()">
+      📋 COPY KEY
+    </button>
+
+    <button class="close-btn" onclick="closePopup()">
+      CLOSE
+    </button>
+
+    <p id="copied" style="display:none;">✅ Key Copied!</p>
+  </div>
+</div>
+
+<script>
+function startUnlock() {
+  const button = document.querySelector(".unlock-btn");
+  const timer = document.getElementById("timer");
+  const secondsText = document.getElementById("seconds");
+
+  button.disabled = true;
+  button.style.opacity = "0.5";
+  timer.style.display = "block";
+
+  let seconds = 5;
+  secondsText.textContent = seconds;
+
+  const countdown = setInterval(function() {
+    seconds--;
+    secondsText.textContent = seconds;
+
+    if (seconds <= 0) {
+      clearInterval(countdown);
+
+      timer.style.display = "none";
+      document.getElementById("keyModal").style.display = "flex";
+
+      button.disabled = false;
+      button.style.opacity = "1";
+    }
+  }, 1000);
+}
+
+function copyKey() {
+  const key = document.getElementById("keyText").textContent.trim();
+
+  navigator.clipboard.writeText(key).then(function() {
+    document.getElementById("copied").style.display = "block";
+
+    setTimeout(function() {
+      document.getElementById("copied").style.display = "none";
+    }, 2000);
+  });
+}
+
+function closePopup() {
+  document.getElementById("keyModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
