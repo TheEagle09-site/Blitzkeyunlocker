@@ -135,7 +135,7 @@ h1 {
     <h2>🔓 Key Unlocked</h2>
 
     <div class="key" id="keyText">
-      BLZ-L7X8WP-5DY4N2
+      BLZ-AECS2K-2314XM
     </div>
 
     <button class="copy-btn" onclick="copyKey()">
@@ -151,49 +151,105 @@ h1 {
 </div>
 
 <script>
+
 function startUnlock() {
-  const button = document.querySelector(".unlock-btn");
-  const timer = document.getElementById("timer");
-  const secondsText = document.getElementById("seconds");
+
+  const button =
+    document.querySelector(".unlock-btn");
+
+  const timer =
+    document.getElementById("timer");
+
+  const secondsText =
+    document.getElementById("seconds");
+
 
   button.disabled = true;
   button.style.opacity = "0.5";
+
   timer.style.display = "block";
 
+
   let seconds = 5;
-  secondsText.textContent = seconds;
 
-  const countdown = setInterval(function() {
-    seconds--;
-    secondsText.textContent = seconds;
+  secondsText.textContent =
+    seconds;
 
-    if (seconds <= 0) {
-      clearInterval(countdown);
 
-      timer.style.display = "none";
-      document.getElementById("keyModal").style.display = "flex";
+  const countdown =
+    setInterval(function() {
 
-      button.disabled = false;
-      button.style.opacity = "1";
-    }
-  }, 1000);
+      seconds--;
+
+      secondsText.textContent =
+        seconds;
+
+
+      if (seconds <= 0) {
+
+        clearInterval(countdown);
+
+
+        timer.style.display =
+          "none";
+
+
+        document.getElementById(
+          "keyModal"
+        ).style.display = "flex";
+
+
+        button.disabled =
+          false;
+
+        button.style.opacity =
+          "1";
+
+      }
+
+    }, 1000);
+
 }
+
 
 function copyKey() {
-  const key = document.getElementById("keyText").textContent.trim();
 
-  navigator.clipboard.writeText(key).then(function() {
-    document.getElementById("copied").style.display = "block";
+  const key =
+    document.getElementById(
+      "keyText"
+    ).textContent.trim();
+
+
+  navigator.clipboard.writeText(
+    key
+  ).then(function() {
+
+    document.getElementById(
+      "copied"
+    ).style.display = "block";
+
 
     setTimeout(function() {
-      document.getElementById("copied").style.display = "none";
+
+      document.getElementById(
+        "copied"
+      ).style.display = "none";
+
     }, 2000);
+
   });
+
 }
 
+
 function closePopup() {
-  document.getElementById("keyModal").style.display = "none";
+
+  document.getElementById(
+    "keyModal"
+  ).style.display = "none";
+
 }
+
 </script>
 
 </body>
