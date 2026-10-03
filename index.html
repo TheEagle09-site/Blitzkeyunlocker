@@ -135,7 +135,7 @@ h1 {
     <h2>🔓 Key Unlocked</h2>
 
     <div class="key" id="keyText">
-      BLZ-AECS2K-2314XM
+      BLZ-FBYNVH-0B17HQ
     </div>
 
     <button class="copy-btn" onclick="copyKey()">
@@ -163,47 +163,35 @@ function startUnlock() {
   const secondsText =
     document.getElementById("seconds");
 
-
   button.disabled = true;
   button.style.opacity = "0.5";
 
   timer.style.display = "block";
 
-
   let seconds = 5;
 
-  secondsText.textContent =
-    seconds;
-
+  secondsText.textContent = seconds;
 
   const countdown =
     setInterval(function() {
 
       seconds--;
 
-      secondsText.textContent =
-        seconds;
-
+      secondsText.textContent = seconds;
 
       if (seconds <= 0) {
 
         clearInterval(countdown);
 
-
-        timer.style.display =
-          "none";
-
+        timer.style.display = "none";
 
         document.getElementById(
           "keyModal"
         ).style.display = "flex";
 
+        button.disabled = false;
 
-        button.disabled =
-          false;
-
-        button.style.opacity =
-          "1";
+        button.style.opacity = "1";
 
       }
 
@@ -219,7 +207,6 @@ function copyKey() {
       "keyText"
     ).textContent.trim();
 
-
   navigator.clipboard.writeText(
     key
   ).then(function() {
@@ -227,7 +214,6 @@ function copyKey() {
     document.getElementById(
       "copied"
     ).style.display = "block";
-
 
     setTimeout(function() {
 
