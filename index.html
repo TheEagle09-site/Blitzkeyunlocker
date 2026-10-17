@@ -3,239 +3,543 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blitz Free Key</title>
+<meta name="theme-color" content="#080b14">
+
+<title>Blitz Free Key | Premium Access</title>
 
 <style>
+:root {
+  --bg: #080b14;
+  --card: #101725;
+  --blue: #3985ff;
+  --cyan: #39d9ff;
+  --text: #f4f7ff;
+  --muted: #8996ad;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 22px;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #080808, #1b1b1b);
-  color: white;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% 15%,
+      rgba(29, 100, 255, .17), transparent 48%),
+    var(--bg);
+  overflow-x: hidden;
 }
 
-.box {
-  width: 90%;
-  max-width: 400px;
-  padding: 35px 25px;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .15;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 35px 35px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.top-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #8bbaff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34e89e;
+  box-shadow: 0 0 10px #34e89e;
+}
+
+.card {
+  position: relative;
+  padding: 34px 25px 27px;
+  overflow: hidden;
   text-align: center;
-  background: #111;
-  border-radius: 18px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
+  background: linear-gradient(145deg, #131d30, #0c111d 75%);
+  border: 1px solid rgba(83, 146, 255, .28);
+  border-radius: 22px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.45),
+              0 0 35px rgba(41,112,255,.08);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent, var(--cyan), var(--blue), transparent);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 22px;
+  font-size: 37px;
+  background: linear-gradient(145deg, #1c3f79, #101a2c);
+  border: 1px solid rgba(93,174,255,.5);
+  border-radius: 22px;
+  box-shadow: 0 0 28px rgba(48,129,255,.18);
 }
 
 h1 {
-  margin-bottom: 25px;
-  font-size: 27px;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+h1 span {
+  color: var(--cyan);
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  padding: 8px 13px;
+  color: #a9caff;
+  background: rgba(54,126,255,.09);
+  border: 1px solid rgba(72,144,255,.22);
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .unlock-btn {
+  position: relative;
   width: 100%;
-  padding: 16px;
-  border: 0;
-  border-radius: 10px;
-  background: #1877ff;
+  margin-top: 25px;
+  padding: 17px 12px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px;
+  background: linear-gradient(110deg, #2466ed, #258fff);
   color: white;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
   cursor: pointer;
+  box-shadow: 0 8px 25px rgba(35,111,255,.24);
+  transition: transform .2s, box-shadow .2s, opacity .2s;
+}
+
+.unlock-btn:hover {
+  box-shadow: 0 8px 32px rgba(35,140,255,.4);
+  transform: translateY(-2px);
 }
 
 .unlock-btn:active {
-  transform: scale(0.97);
+  transform: scale(.98);
+}
+
+.unlock-btn:disabled {
+  cursor: wait;
+  opacity: .65;
+  transform: none;
 }
 
 #timer {
   display: none;
-  margin-top: 20px;
-  font-size: 22px;
+  margin-top: 23px;
+  padding: 17px 10px;
+  background: rgba(0,0,0,.2);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+}
+
+.timer-title {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.count-number {
+  display: block;
+  margin-top: 8px;
+  color: var(--cyan);
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.timer-track {
+  height: 4px;
+  margin-top: 13px;
+  overflow: hidden;
+  background: #202b3d;
+  border-radius: 10px;
+}
+
+.timer-progress {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  transition: width 1s linear;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.feature {
+  padding: 13px 5px;
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.065);
+  border-radius: 11px;
+}
+
+.feature-icon {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.feature-text {
+  color: #aab6cb;
+  font-size: 10px;
   font-weight: bold;
 }
 
+.footer {
+  margin-top: 22px;
+  color: #65738a;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: .5px;
+}
+
+/* Popup */
 .modal {
   display: none;
   position: fixed;
+  z-index: 10;
   inset: 0;
-  background: rgba(0,0,0,0.75);
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 20px;
+  background: rgba(3,6,13,.84);
+  backdrop-filter: blur(10px);
 }
 
 .modal-box {
   width: 100%;
-  max-width: 380px;
-  background: #181818;
-  border-radius: 16px;
-  padding: 28px 20px;
+  max-width: 370px;
+  padding: 28px 22px;
   text-align: center;
+  background: linear-gradient(145deg, #17243a, #0c121f);
+  border: 1px solid rgba(69,153,255,.4);
+  border-radius: 20px;
+  box-shadow: 0 0 55px rgba(37,117,255,.15);
+  animation: popup .25s ease-out;
+}
+
+@keyframes popup {
+  from { opacity: 0; transform: translateY(12px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 17px;
+  color: #58f5b0;
+  background: rgba(45,222,143,.1);
+  border: 1px solid rgba(45,222,143,.3);
+  border-radius: 50%;
+  font-size: 27px;
 }
 
 .modal-box h2 {
-  margin-top: 0;
+  font-size: 23px;
+}
+
+.modal-subtitle {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .key {
-  margin: 20px 0;
-  padding: 15px 10px;
-  background: #000;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: bold;
-  word-break: break-all;
+  margin: 22px 0 15px;
+  padding: 17px 12px;
+  color: var(--cyan);
+  background: #080d17;
+  border: 1px dashed rgba(57,217,255,.4);
+  border-radius: 11px;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: .6px;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.copy-btn, .close-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: .2s;
 }
 
 .copy-btn {
-  width: 100%;
-  padding: 14px;
-  border: 0;
-  border-radius: 9px;
-  background: #20c56b;
   color: white;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
+  background: linear-gradient(110deg, #176ce9, #238fff);
+  border: 0;
+}
+
+.copy-btn:hover {
+  filter: brightness(1.12);
 }
 
 .close-btn {
-  margin-top: 12px;
-  padding: 10px 20px;
-  border: 0;
-  border-radius: 8px;
-  background: #444;
-  color: white;
-  cursor: pointer;
+  margin-top: 10px;
+  color: #a9b5c8;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+}
+
+#copied {
+  display: none;
+  margin-top: 13px;
+  color: #58f5b0;
+  font-size: 12px;
+}
+
+@media (max-width: 360px) {
+  .card { padding: 28px 17px 22px; }
+  h1 { font-size: 26px; }
+  .feature-text { font-size: 9px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1>⚡ Blitz Free Key</h1>
+<main class="container">
 
-  <button class="unlock-btn" onclick="startUnlock()">
-    BLITZ FREE KEY UNLOCK
-  </button>
-
-  <div id="timer">
-    Please wait... <span id="seconds">5</span>s
+  <div class="top-label">
+    <span class="status-dot"></span>
+    BLITZ ACCESS PORTAL
   </div>
-</div>
 
-<div class="modal" id="keyModal">
-  <div class="modal-box">
-    <h2>🔓 Key Unlocked</h2>
+  <section class="card">
 
-    <div class="key" id="keyText">
-      BLZ-VABGEC-JC810Z
+    <div class="logo">⚡</div>
+
+    <h1>BLITZ <span>FREE KEY</span></h1>
+
+    <p class="subtitle">
+      Your access starts here.<br>
+      Unlock your key in a few seconds.
+    </p>
+
+    <div class="badge">
+      <span>✦</span> FREE ACCESS
     </div>
 
-    <button class="copy-btn" onclick="copyKey()">
-      📋 COPY KEY
+    <button class="unlock-btn" id="unlockBtn"
+      onclick="startUnlock()">
+      🔓 &nbsp; UNLOCK YOUR KEY
+    </button>
+
+    <div id="timer" aria-live="polite">
+      <div class="timer-title">PREPARING YOUR KEY...</div>
+      <span class="count-number" id="seconds">5</span>
+      <div class="timer-track">
+        <div class="timer-progress" id="progress"></div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-text">QUICK ACCESS</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔑</div>
+        <div class="feature-text">KEY DISPLAY</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📋</div>
+        <div class="feature-text">EASY COPY</div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    BLITZ FREE KEY · SIMPLE. FAST. EASY.
+  </footer>
+
+</main>
+
+<div class="modal" id="keyModal"
+  role="dialog" aria-modal="true"
+  aria-labelledby="modalTitle">
+
+  <div class="modal-box">
+
+    <div class="success-icon">✓</div>
+
+    <h2 id="modalTitle">KEY UNLOCKED!</h2>
+
+    <p class="modal-subtitle">
+      Your key is ready. Copy it below.
+    </p>
+
+    <div class="key" id="keyText">BLZ-VABGEC-JC810Z</div>
+
+    <button class="copy-btn" id="copyBtn"
+      onclick="copyKey()">
+      📋 &nbsp; COPY KEY
     </button>
 
     <button class="close-btn" onclick="closePopup()">
       CLOSE
     </button>
 
-    <p id="copied" style="display:none;">✅ Key Copied!</p>
+    <p id="copied" role="status" aria-live="polite">
+      ✓ Key copied successfully!
+    </p>
+
   </div>
 </div>
 
 <script>
+let countdown = null;
+let busy = false;
 
 function startUnlock() {
+  if (busy) return;
 
-  const button =
-    document.querySelector(".unlock-btn");
+  busy = true;
 
-  const timer =
-    document.getElementById("timer");
-
-  const secondsText =
-    document.getElementById("seconds");
-
-  button.disabled = true;
-  button.style.opacity = "0.5";
-
-  timer.style.display = "block";
+  const button = document.getElementById("unlockBtn");
+  const timer = document.getElementById("timer");
+  const secondsText = document.getElementById("seconds");
+  const progress = document.getElementById("progress");
 
   let seconds = 5;
 
+  button.disabled = true;
+  button.textContent = "⏳  PLEASE WAIT...";
+  timer.style.display = "block";
   secondsText.textContent = seconds;
+  progress.style.width = "100%";
 
-  const countdown =
-    setInterval(function() {
+  countdown = setInterval(function() {
+    seconds--;
+    secondsText.textContent = seconds;
+    progress.style.width = (seconds / 5 * 100) + "%";
 
-      seconds--;
+    if (seconds <= 0) {
+      clearInterval(countdown);
+      countdown = null;
 
-      secondsText.textContent = seconds;
+      timer.style.display = "none";
+      document.getElementById("keyModal").style.display = "flex";
+      document.getElementById("copyBtn").focus();
 
-      if (seconds <= 0) {
-
-        clearInterval(countdown);
-
-        timer.style.display = "none";
-
-        document.getElementById(
-          "keyModal"
-        ).style.display = "flex";
-
-        button.disabled = false;
-
-        button.style.opacity = "1";
-
-      }
-
-    }, 1000);
-
+      busy = false;
+      button.disabled = false;
+      button.innerHTML = "🔓 &nbsp; UNLOCK YOUR KEY";
+    }
+  }, 1000);
 }
 
+async function copyKey() {
+  const key = document.getElementById("keyText").textContent.trim();
+  const copied = document.getElementById("copied");
+  const copyBtn = document.getElementById("copyBtn");
 
-function copyKey() {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(key);
+    } else {
+      const area = document.createElement("textarea");
+      area.value = key;
+      area.style.position = "fixed";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.select();
 
-  const key =
-    document.getElementById(
-      "keyText"
-    ).textContent.trim();
+      const success = document.execCommand("copy");
+      area.remove();
 
-  navigator.clipboard.writeText(
-    key
-  ).then(function() {
+      if (!success) throw new Error("Copy failed");
+    }
 
-    document.getElementById(
-      "copied"
-    ).style.display = "block";
-
-    setTimeout(function() {
-
-      document.getElementById(
-        "copied"
-      ).style.display = "none";
-
-    }, 2000);
-
-  });
-
+    copied.style.display = "block";
+    copyBtn.textContent = "✓  COPIED!";
+  } catch (error) {
+    copied.style.display = "block";
+    copied.textContent = "Select the key above and copy it manually.";
+    copyBtn.textContent = "📋  TRY AGAIN";
+  }
 }
-
 
 function closePopup() {
-
-  document.getElementById(
-    "keyModal"
-  ).style.display = "none";
-
+  document.getElementById("keyModal").style.display = "none";
+  document.getElementById("copied").style.display = "none";
+  document.getElementById("copyBtn").textContent = "📋  COPY KEY";
+  document.getElementById("unlockBtn").focus();
 }
 
+document.getElementById("keyModal").addEventListener("click", function(event) {
+  if (event.target === this) closePopup();
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closePopup();
+  }
+});
 </script>
 
 </body>
