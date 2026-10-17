@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b14">
+<meta name="theme-color" content="#080808">
 
-<title>Blitz Free Key | Premium Access</title>
+<title>THE EAGLE⁰⁹ | Blitz Free Key</title>
 
 <style>
 :root {
-  --bg: #080b14;
-  --card: #101725;
-  --blue: #3985ff;
-  --cyan: #39d9ff;
-  --text: #f4f7ff;
-  --muted: #8996ad;
+  --bg: #080808;
+  --panel: #111111;
+  --gold: #efb934;
+  --gold-light: #ffe6a0;
+  --text: #f8f8f8;
+  --muted: #929292;
+  --border: rgba(239,185,52,.24);
 }
 
 * {
@@ -25,67 +26,76 @@
 
 body {
   min-height: 100vh;
+  padding: 25px 16px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 22px;
-  font-family: Arial, sans-serif;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(ellipse at 50% 15%,
-      rgba(29, 100, 255, .17), transparent 48%),
-    var(--bg);
-  overflow-x: hidden;
+    radial-gradient(ellipse at 50% 0%,
+      rgba(177,119,20,.13), transparent 45%),
+    linear-gradient(145deg,#060606,#111 50%,#050505);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .15;
-  background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-  background-size: 35px 35px;
-}
-
-.container {
-  position: relative;
+.page {
   width: 100%;
   max-width: 420px;
 }
 
-.top-label {
+/* BRAND HEADER */
+
+.brand {
+  text-align: center;
+  margin-bottom: 27px;
+}
+
+.brand-symbol {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 17px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 18px;
-  color: #8bbaff;
-  font-size: 11px;
-  font-weight: 800;
+  justify-content: center;
+  font-size: 34px;
+  color: var(--gold);
+  background: linear-gradient(145deg,#29200e,#101010);
+  border: 1px solid rgba(239,185,52,.42);
+  border-radius: 19px;
+  box-shadow: 0 0 30px rgba(239,185,52,.09);
+}
+
+.brand-name {
+  font-size: 23px;
+  font-weight: 900;
   letter-spacing: 3px;
 }
 
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #34e89e;
-  box-shadow: 0 0 10px #34e89e;
+.brand-name span {
+  color: var(--gold);
+  font-size: 14px;
+  vertical-align: super;
+  letter-spacing: 0;
 }
+
+.brand-sub {
+  margin-top: 10px;
+  color: #858585;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+/* MAIN CARD */
 
 .card {
   position: relative;
-  padding: 34px 25px 27px;
+  padding: 30px 22px 23px;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(145deg, #131d30, #0c111d 75%);
-  border: 1px solid rgba(83, 146, 255, .28);
-  border-radius: 22px;
-  box-shadow: 0 25px 80px rgba(0,0,0,.45),
-              0 0 35px rgba(41,112,255,.08);
+  background: linear-gradient(145deg,#171717,#0d0d0d);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 25px 65px rgba(0,0,0,.4);
 }
 
 .card::before {
@@ -95,50 +105,45 @@ body::before {
   left: 15%;
   width: 70%;
   height: 2px;
-  background: linear-gradient(90deg,
-    transparent, var(--cyan), var(--blue), transparent);
+  background: linear-gradient(
+    90deg,transparent,var(--gold),transparent
+  );
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 76px;
-  height: 76px;
-  margin: 0 auto 22px;
-  font-size: 37px;
-  background: linear-gradient(145deg, #1c3f79, #101a2c);
-  border: 1px solid rgba(93,174,255,.5);
-  border-radius: 22px;
-  box-shadow: 0 0 28px rgba(48,129,255,.18);
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 3px;
 }
 
 h1 {
-  font-size: 30px;
+  margin-top: 17px;
+  font-size: 29px;
+  line-height: 1.25;
   font-weight: 900;
-  letter-spacing: 1px;
 }
 
 h1 span {
-  color: var(--cyan);
+  color: var(--gold);
 }
 
-.subtitle {
-  margin-top: 10px;
-  color: var(--muted);
+.description {
+  margin-top: 13px;
+  color: #a3a3a3;
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   margin-top: 22px;
-  padding: 8px 13px;
-  color: #a9caff;
-  background: rgba(54,126,255,.09);
-  border: 1px solid rgba(72,144,255,.22);
+  padding: 10px 16px;
+  color: var(--gold-light);
+  background: rgba(239,185,52,.07);
+  border: 1px solid var(--border);
   border-radius: 30px;
   font-size: 11px;
   font-weight: bold;
@@ -146,25 +151,24 @@ h1 span {
 }
 
 .unlock-btn {
-  position: relative;
   width: 100%;
   margin-top: 25px;
-  padding: 17px 12px;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 12px;
-  background: linear-gradient(110deg, #2466ed, #258fff);
-  color: white;
+  padding: 17px 10px;
+  color: #171107;
+  background: linear-gradient(110deg,#c58b18,#ffe08a,#e9ae2a);
+  border: 1px solid #ffdc7c;
+  border-radius: 11px;
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 1px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(35,111,255,.24);
-  transition: transform .2s, box-shadow .2s, opacity .2s;
+  box-shadow: 0 8px 25px rgba(239,185,52,.12);
+  transition: .2s;
 }
 
 .unlock-btn:hover {
-  box-shadow: 0 8px 32px rgba(35,140,255,.4);
   transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(239,185,52,.23);
 }
 
 .unlock-btn:active {
@@ -172,82 +176,96 @@ h1 span {
 }
 
 .unlock-btn:disabled {
+  opacity: .6;
   cursor: wait;
-  opacity: .65;
   transform: none;
 }
 
+/* TIMER */
+
 #timer {
   display: none;
-  margin-top: 23px;
-  padding: 17px 10px;
-  background: rgba(0,0,0,.2);
-  border: 1px solid rgba(255,255,255,.07);
+  margin-top: 20px;
+  padding: 18px;
+  background: #090909;
+  border: 1px solid #292929;
   border-radius: 12px;
 }
 
-.timer-title {
-  color: var(--muted);
-  font-size: 12px;
+.timer-label {
+  color: #999;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 
-.count-number {
+#seconds {
   display: block;
-  margin-top: 8px;
-  color: var(--cyan);
-  font-size: 34px;
+  margin-top: 9px;
+  color: var(--gold);
+  font-size: 35px;
   font-weight: 900;
 }
 
-.timer-track {
+.progress-track {
   height: 4px;
   margin-top: 13px;
   overflow: hidden;
-  background: #202b3d;
+  background: #292929;
   border-radius: 10px;
 }
 
-.timer-progress {
+#progress {
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  background: linear-gradient(90deg,#b57a12,#ffe6a0);
   transition: width 1s linear;
 }
 
+/* FEATURES */
+
 .features {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 24px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 9px;
+  margin-top: 23px;
 }
 
 .feature {
-  padding: 13px 5px;
+  padding: 15px 3px;
   background: rgba(255,255,255,.025);
-  border: 1px solid rgba(255,255,255,.065);
-  border-radius: 11px;
+  border: 1px solid #292929;
+  border-radius: 12px;
 }
 
 .feature-icon {
-  margin-bottom: 8px;
-  font-size: 17px;
+  margin-bottom: 10px;
+  font-size: 21px;
 }
 
 .feature-text {
-  color: #aab6cb;
-  font-size: 10px;
+  color: #bdbdbd;
+  font-size: 9px;
   font-weight: bold;
+  letter-spacing: .3px;
 }
+
+/* FOOTER */
 
 .footer {
-  margin-top: 22px;
-  color: #65738a;
+  margin-top: 23px;
+  color: #686868;
   text-align: center;
   font-size: 10px;
-  letter-spacing: .5px;
+  line-height: 1.9;
+  letter-spacing: 1px;
 }
 
-/* Popup */
+.footer strong {
+  color: #c99b37;
+}
+
+/* POPUP */
+
 .modal {
   display: none;
   position: fixed;
@@ -256,131 +274,140 @@ h1 span {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgba(3,6,13,.84);
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.86);
+  backdrop-filter: blur(8px);
 }
 
 .modal-box {
   width: 100%;
   max-width: 370px;
-  padding: 28px 22px;
+  padding: 27px 21px;
   text-align: center;
-  background: linear-gradient(145deg, #17243a, #0c121f);
-  border: 1px solid rgba(69,153,255,.4);
-  border-radius: 20px;
-  box-shadow: 0 0 55px rgba(37,117,255,.15);
-  animation: popup .25s ease-out;
+  background: linear-gradient(145deg,#1b1b1b,#0b0b0b);
+  border: 1px solid rgba(239,185,52,.4);
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(239,185,52,.08);
+  animation: appear .25s ease-out;
 }
 
-@keyframes popup {
-  from { opacity: 0; transform: translateY(12px) scale(.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .success-icon {
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 17px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
-  margin: 0 auto 17px;
-  color: #58f5b0;
-  background: rgba(45,222,143,.1);
-  border: 1px solid rgba(45,222,143,.3);
+  color: var(--gold);
+  background: rgba(239,185,52,.08);
+  border: 1px solid var(--border);
   border-radius: 50%;
-  font-size: 27px;
+  font-size: 28px;
 }
 
 .modal-box h2 {
-  font-size: 23px;
+  font-size: 22px;
 }
 
 .modal-subtitle {
-  margin-top: 9px;
-  color: var(--muted);
+  margin-top: 10px;
+  color: #999;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .key {
   margin: 22px 0 15px;
-  padding: 17px 12px;
-  color: var(--cyan);
-  background: #080d17;
-  border: 1px dashed rgba(57,217,255,.4);
-  border-radius: 11px;
-  font-size: 17px;
+  padding: 16px 10px;
+  color: var(--gold-light);
+  background: #050505;
+  border: 1px dashed rgba(239,185,52,.4);
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: 900;
-  letter-spacing: .6px;
   overflow-wrap: anywhere;
   user-select: all;
 }
 
-.copy-btn, .close-btn {
+.copy-btn,.close-btn {
   width: 100%;
   padding: 14px;
-  border-radius: 10px;
+  border-radius: 9px;
   font-size: 13px;
   font-weight: 900;
-  letter-spacing: .5px;
   cursor: pointer;
-  transition: .2s;
 }
 
 .copy-btn {
-  color: white;
-  background: linear-gradient(110deg, #176ce9, #238fff);
+  color: #171107;
+  background: linear-gradient(110deg,#c58b18,#ffe08a);
   border: 0;
-}
-
-.copy-btn:hover {
-  filter: brightness(1.12);
 }
 
 .close-btn {
   margin-top: 10px;
-  color: #a9b5c8;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.09);
+  color: #ccc;
+  background: #202020;
+  border: 1px solid #333;
 }
 
 #copied {
   display: none;
   margin-top: 13px;
-  color: #58f5b0;
+  color: #73e7a7;
   font-size: 12px;
 }
 
-@media (max-width: 360px) {
-  .card { padding: 28px 17px 22px; }
-  h1 { font-size: 26px; }
-  .feature-text { font-size: 9px; }
+@media(max-width:360px) {
+  .card { padding: 25px 15px; }
+  h1 { font-size: 25px; }
+  .brand-name { font-size: 21px; }
+  .feature-text { font-size: 8px; }
 }
 </style>
 </head>
 
 <body>
 
-<main class="container">
+<main class="page">
 
-  <div class="top-label">
-    <span class="status-dot"></span>
-    BLITZ ACCESS PORTAL
-  </div>
+  <header class="brand">
+    <div class="brand-symbol">♛</div>
+
+    <div class="brand-name">
+      THE EAGLE<span>09</span>
+    </div>
+
+    <div class="brand-sub">
+      OFFICIAL GAMING BRAND
+    </div>
+  </header>
 
   <section class="card">
 
-    <div class="logo">⚡</div>
+    <div class="eyebrow">
+      ✦ &nbsp; PREMIUM ACCESS PORTAL
+    </div>
 
     <h1>BLITZ <span>FREE KEY</span></h1>
 
-    <p class="subtitle">
-      Your access starts here.<br>
-      Unlock your key in a few seconds.
+    <p class="description">
+      Welcome to THE EAGLE⁰⁹.<br>
+      Your key access starts here.
     </p>
 
     <div class="badge">
-      <span>✦</span> FREE ACCESS
+      ✦ &nbsp; FREE KEY ACCESS
     </div>
 
     <button class="unlock-btn" id="unlockBtn"
@@ -389,10 +416,10 @@ h1 span {
     </button>
 
     <div id="timer" aria-live="polite">
-      <div class="timer-title">PREPARING YOUR KEY...</div>
-      <span class="count-number" id="seconds">5</span>
-      <div class="timer-track">
-        <div class="timer-progress" id="progress"></div>
+      <div class="timer-label">PREPARING YOUR KEY</div>
+      <span id="seconds">5</span>
+      <div class="progress-track">
+        <div id="progress"></div>
       </div>
     </div>
 
@@ -401,10 +428,12 @@ h1 span {
         <div class="feature-icon">⚡</div>
         <div class="feature-text">QUICK ACCESS</div>
       </div>
+
       <div class="feature">
         <div class="feature-icon">🔑</div>
         <div class="feature-text">KEY DISPLAY</div>
       </div>
+
       <div class="feature">
         <div class="feature-icon">📋</div>
         <div class="feature-text">EASY COPY</div>
@@ -414,6 +443,7 @@ h1 span {
   </section>
 
   <footer class="footer">
+    POWERED BY <strong>THE EAGLE⁰⁹</strong><br>
     BLITZ FREE KEY · SIMPLE. FAST. EASY.
   </footer>
 
@@ -430,7 +460,8 @@ h1 span {
     <h2 id="modalTitle">KEY UNLOCKED!</h2>
 
     <p class="modal-subtitle">
-      Your key is ready. Copy it below.
+      Your access key is ready.<br>
+      Copy it below.
     </p>
 
     <div class="key" id="keyText">BLZ-VABGEC-JC810Z</div>
@@ -457,7 +488,6 @@ let busy = false;
 
 function startUnlock() {
   if (busy) return;
-
   busy = true;
 
   const button = document.getElementById("unlockBtn");
@@ -468,7 +498,7 @@ function startUnlock() {
   let seconds = 5;
 
   button.disabled = true;
-  button.textContent = "⏳  PLEASE WAIT...";
+  button.textContent = "PLEASE WAIT...";
   timer.style.display = "block";
   secondsText.textContent = seconds;
   progress.style.width = "100%";
@@ -496,7 +526,7 @@ function startUnlock() {
 async function copyKey() {
   const key = document.getElementById("keyText").textContent.trim();
   const copied = document.getElementById("copied");
-  const copyBtn = document.getElementById("copyBtn");
+  const button = document.getElementById("copyBtn");
 
   try {
     if (navigator.clipboard && window.isSecureContext) {
@@ -515,12 +545,12 @@ async function copyKey() {
       if (!success) throw new Error("Copy failed");
     }
 
+    copied.textContent = "✓ Key copied successfully!";
     copied.style.display = "block";
-    copyBtn.textContent = "✓  COPIED!";
+    button.textContent = "✓ COPIED!";
   } catch (error) {
-    copied.style.display = "block";
     copied.textContent = "Select the key above and copy it manually.";
-    copyBtn.textContent = "📋  TRY AGAIN";
+    copied.style.display = "block";
   }
 }
 
@@ -531,14 +561,12 @@ function closePopup() {
   document.getElementById("unlockBtn").focus();
 }
 
-document.getElementById("keyModal").addEventListener("click", function(event) {
-  if (event.target === this) closePopup();
+document.getElementById("keyModal").addEventListener("click", function(e) {
+  if (e.target === this) closePopup();
 });
 
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closePopup();
-  }
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closePopup();
 });
 </script>
 
